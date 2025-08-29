@@ -4,7 +4,7 @@ from cnnClassifier import logger
 
 
 
-STAGE_NAME = "Prepare Base Model"
+STAGE_NAME = "prepare base model"
 
 class PrepareBaseModelTrainingPipeline:
       def __init__(self) -> None:

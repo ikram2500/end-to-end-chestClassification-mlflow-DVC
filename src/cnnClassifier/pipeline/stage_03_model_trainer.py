@@ -5,7 +5,7 @@ from cnnClassifier import logger
 
 
 
-STAGE_NAME = "Training"
+STAGE_NAME = "training"
 
 
 class ModelTrainingPipeline:

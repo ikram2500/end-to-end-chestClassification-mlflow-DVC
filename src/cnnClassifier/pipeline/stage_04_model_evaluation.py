@@ -3,7 +3,7 @@ from cnnClassifier.components.model_evaluation_mlflow import Evaluation
 from cnnClassifier import logger 
 
 
-STAGE_NAME = "Evaluation stage"
+STAGE_NAME = "evaluation"
 
 
 class EvaluationPipeline:

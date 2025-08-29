@@ -6,7 +6,7 @@ from cnnClassifier.pipeline.stage_04_model_evaluation import EvaluationPipeline
 
 
 
-STAGE_NAME = "Data Ingestion stage"
+STAGE_NAME = "data ingestion stage"
 
 try:
       logger.info(f">>>>> stage {STAGE_NAME} started <<<<<")
@@ -20,7 +20,7 @@ except Exception as e:
 
 
 
-STAGE_NAME = "Prepare Base Model"
+STAGE_NAME = "prepare base model"
 try:
           logger.info(f">>>>> stage {STAGE_NAME} started <<<<<")
           obj = PrepareBaseModelTrainingPipeline()
@@ -30,7 +30,7 @@ except Exception as e:
           logger.error(f">>>>> stage {STAGE_NAME} failed <<<<<")
           logger.error(e)
 
-STAGE_NAME = "Training"
+STAGE_NAME = "training"
 
 try:
           logger.info(f">>>>> stage {STAGE_NAME} started <<<<<")
@@ -41,7 +41,7 @@ except Exception as e:
           logger.error(f">>>>> stage {STAGE_NAME} failed <<<<<")
           logger.error(e)
 
-STAGE_NAME = "Evaluation stage"
+STAGE_NAME = "evaluation"
 
 
 
