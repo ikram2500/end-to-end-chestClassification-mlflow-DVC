@@ -24,3 +24,8 @@ Perform chest classification using deeplearning tensorflow
 7. Update the pipeline 
 8. Update the main.py 
 9. Update the dvc.yaml 
+
+
+export MLFLOW_TRACKING_URI=https://dagshub.com/ikram2500/end-to-end-chestClassification-mlflow-DVC.mlflow
+export MLFLOW_TRACKING_USERNAME=ikram2500
+export MLFLOW_TRACKING_PASSWORD=bc4a05ef4f1a8239f5992d3a59f226a7d0c22822

@@ -1,7 +1,7 @@
 #  Update the configuration manager in src config
 from cnnClassifier.constants import * 
-from cnnClassifier.utils.common import read_yaml, create_directories 
-from cnnClassifier.entity.config_entity import (DataIngestionConfig,PrepareBaseModelConfig,TrainingConfig)
+from cnnClassifier.utils.common import read_yaml, create_directories, save_json
+from cnnClassifier.entity.config_entity import (DataIngestionConfig,PrepareBaseModelConfig,TrainingConfig, EvaluationConfig)
 import os
 
 
@@ -73,3 +73,15 @@ class CofigurationManager:
         )
 
         return training_config
+    
+    def get_evaluation_config(self) -> EvaluationConfig:
+          eval_config = EvaluationConfig(
+                path_of_model="artifacts/training/model.h5", # pyright: ignore[reportArgumentType]
+                training_data="artifacts/data_ingestion/Chest-Ct-Scan-Data", # pyright: ignore[reportArgumentType]
+                mlflow_uri="https://dagshub.com/ikram2500/end-to-end-chestClassification-mlflow-DVC.mlflow",
+                all_params=self.params,
+                params_image_size=self.params.IMAGE_SIZE,
+                params_batch_size=self.params.BATCH_SIZE
+            
+          )
+          return eval_config
