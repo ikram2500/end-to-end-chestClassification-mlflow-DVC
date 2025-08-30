@@ -1,16 +1,11 @@
 
-FROM python:3.10-slim
-RUN apt-get update -y && \
-    apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends ca-certificates && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+FROM python:3.12-slim-buster
+RUN apt update -y && apt install awscli -y
+    
 
 WORKDIR /app
 
 COPY . /app
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir awscli && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 CMD ["python3", "app.py"]
